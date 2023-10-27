@@ -22,11 +22,13 @@ To get started with the LOGIBLOX CRUD example app, follow these steps:
 
     For this example we use the datafile `data/table.csv` which is included in this repo. Upload it to LOGIBLOX and and press the connector symbol to open up the API menu. 
 
-    Make sure that you set the Lead ID column to the index, which uniquely identifies each row allowing row-specific operatorion such as update and delete.
+    Make sure that you set the Lead ID column to the index, which uniquely identifies each row allowing row-specific operations such as update and delete.
 
-4. **Set Up API keys:**
+4. **API key set-up:**
     
-    first to create an API key for the datafile we go to the __Share API Configurations__ then we navigate to __Share API__ and add a new key. To add the key to the project first:
+    First to create an API key for the datafile, go to the __Share API Configurations__ and then navigate to __Share API__ and add a new key.
+    
+    When the key is generated, we can add it to our react app using the following steps as guide:
 
 
    - Create a `.env.local` file in the project root.
@@ -75,5 +77,5 @@ Also, if you create additional tables, make sure that you enable your api key on
 
 For more information about LOGIBLOX, visit [LOGIBLOX](https://logiblox.com).
 
-Happy managing your data points with LOGIBLOX CRUD!
+Happy managing your data points with LOGIBLOX CRUD API!
 
