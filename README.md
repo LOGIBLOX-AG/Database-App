@@ -69,7 +69,7 @@ To get started with the LOGIBLOX CRUD example app, follow these steps:
 
 ## Note
 
-Ensure that you have the correct LOGIBLOX API URL and API token in your `.env.local` file.
+Ensure that you have the correct LOGIBLOX API URL and API token in your `.env.local` file. To make changes in the dotfile take effect, you have to restart npm.
 
 Also, if you create additional tables, make sure that you enable your api key on each datafile you want to access in the __Share API Configuration__ menu.
 
