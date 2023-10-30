@@ -4,80 +4,87 @@ This is a simple example CRUD (Create, Read, Update, Delete) application for int
 
 ## Getting Started
 
-To get started with the LOGIBLOX CRUD example app, follow these steps:
-
-1. **Clone the Repository:**
+To get started with the LOGIBLOX CRUD example app, follow these steps to host the app locally on your machine.
 
    ```bash
+   # clone the repo
    git clone https://github.com/yourusername/logiblox-crud-app.git
-   ```
-
-2. **Navigate to the Project Directory:**
-
-   ```bash
-   cd logiblox-crud-app
-   ```
-
-3. **Upload data file**
-
-    For this example we use the datafile `data/table.csv` which is included in this repo. Upload it to LOGIBLOX and and press the connector symbol to open up the API menu. 
-
-    Make sure that you set the Lead ID column to the index, which uniquely identifies each row allowing row-specific operations such as update and delete.
    
-   ![image](https://github.com/filipLBX/logiblox-crud-app/assets/149149449/bc037a28-9483-4a51-a880-9ce9cb4315a8)
+   # navigate to the project directory 
+   cd logiblox-crud-app
 
-
-5. **API key set-up:**
-    
-    First to create an API key for the datafile, go to the __Share API Configurations__ and then navigate to __Share API__ and add a new key.
-
-   ![share_api](https://github.com/filipLBX/logiblox-crud-app/assets/149149449/32d5285a-9978-4070-92f3-ea8f1110d5fd)
-
-    
-    When the key is generated, we can add it to our react app using the following steps as guide:
-
-
-   - Create a `.env.local` file in the project root.
-   - Add the following environment variables to the `.env.local` file:
-     - `REACT_APP_LOGIBLOX_API_URL` - Set this to the URL of your LOGIBLOX Datapoints API.
-     - `REACT_APP_LOGIBLOX_API_KEY` - Set this to your API token.
-
-   Example `.env.local` content:
-
-   ```plaintext
-   REACT_APP_LOGIBLOX_API_URL=https://your-logiblox-url.com/api/v0/datapoints/table
-   REACT_APP_LOGIBLOX_API_KEY=your-api-key
+   # and open it in your favorite editor, i.e. VSCode
+   code .
    ```
 
-
-7. **Install Dependencies:**
+Next, set up the CRUD app by running:
 
    ```bash
+   # install dependencies
    npm install
-   ```
 
-8. **Start the Development Server:**
-
-   ```bash
+   # start the development server
    npm start
    ```
 
-9. **Access the Application:**
+This should automatically open a web browser and navigate to [http://localhost:3000](http://localhost:3000) and look like this:
 
-   Open a web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the LOGIBLOX CRUD app.
+![image](data/images/03.png)
+
+As you can see it is quite empty. Let's change that by
+1. hosting a data base on logiblox.com
+2. attaching the front-end to the automatically generated LOGIBLOX API endpoints.
+
+
+## Setting up the LOGIBLOX Back-End API
+
+### Create a database on LOGIBLOX
+   To get started, the is a small datafile included in this repo in `data/table.csv`. Upload it to LOGIBLOX and specify the *Lead ID* column as index column. 
+   
+   ![image](data/images/00.png)
+   ![image](data/images/01.png)
+
+This column uniquely identifies each row and allows for row-specific operations such as update and delete in the database.
+
+### Set up the API endpoints
+
+   By clicking on the connector icon in the bottom right corner of the data object, you can access the automatically generated SWAGGER documentation. You can also test the API endpoints directly from there.
+
+   Alternatively click on **Share API Configurations** to generate public API keys, which can be used to access the database and operate on it. Add a key there and copy it to the clipboard.  
+
+   ![image](data/images/05.png)
+   ![image](data/images/06.png)
+
+### Add the API key/route to the front-end
+
+   - Create a `.env.local` file in the project root. This file will be ignored by Git and is only used to set environment variables for your local development environment. Since it contains a secret API key, it should never be committed to source control.
+   - Add the following environment variables to the `.env.local` file:
+     - `REACT_APP_LOGIBLOX_API_URL` - copy this URL from the API documentation page
+     - `REACT_APP_LOGIBLOX_API_KEY` - use the previously generated API key
+   - **RESTART THE APP** 
+     - [in the terminal] CTRL+C and `npm start` again
+#### Example `.env.local` content:
+   ```plaintext
+   REACT_APP_LOGIBLOX_API_URL=https://your-logiblox-url.com/api/v0/datapoints/table
+   
+   REACT_APP_LOGIBLOX_API_KEY=your-api-key
+   ```
+
+The browser should open again on [http://localhost:3000](http://localhost:3000) and look like this:
+
+![image](data/images/08.png)
+
 
 ## Usage
 
-- The app allows you to create, read, update, and delete data points.
-- Click the "Add" button to create a new data point.
-- Click the "Update" button to modify a data point.
-- Click the "Delete" button to remove a data point.
+In this small app, you can manage your data points in the LOGIBLOX database.
+Create, read, update, and delete data points. 
 
-## Note
-
-Ensure that you have the correct LOGIBLOX API URL and API token in your `.env.local` file. To make changes in the dotfile take effect, you have to restart npm.
-
-Also, if you create additional tables, make sure that you enable your api key on each datafile you want to access in the __Share API Configuration__ menu.
+> Click the "Add" button to create a new data point.
+>
+> Click the "Update" button to modify a data point.
+> 
+> Click the "Delete" button to remove a data point.
 
 ## Learn More
 
