@@ -5,8 +5,8 @@ import { ReactComponent as LBXLogo } from './logo.svg';
 import { v4 as uuidv4 } from 'uuid';
 
 // Access the environment variables
-const apiUrl = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiUrl = process.env.REACT_APP_LOGIBLOX_API_URL;
+const apiKey = process.env.REACT_APP_LOGIBLOX_API_KEY;
 
 class App extends Component {
   record = {
@@ -148,16 +148,16 @@ class App extends Component {
     const isEditing = editingRowId === item['Lead ID'];
     return (
       isEditing ? (
-          <input
-            type="text"
-            className="form-control"
-            value={this.state.update[stateKey]}
-            name={stateKey}
-            placeholder={placeholder || item[labelKey]}
-            onChange={this.handleUpdateInputChange}
-          />
-        ) : (
-          <p>{item[labelKey]}</p>
+        <input
+          type="text"
+          className="form-control"
+          value={this.state.update[stateKey]}
+          name={stateKey}
+          placeholder={placeholder || item[labelKey]}
+          onChange={this.handleUpdateInputChange}
+        />
+      ) : (
+        <p>{item[labelKey]}</p>
       )
     );
   }
@@ -188,7 +188,7 @@ class App extends Component {
                 <td>{this.renderTextOrInput(item, 'email', 'E-Mail')}</td>
                 <td>{this.renderTextOrInput(item, 'dealSize', 'Deal Size')}</td>
                 <td class="text-end w-10 d-flex justify-content-end gap-3">
-                <button
+                  <button
                     className="btn btn-danger"
                     onClick={() => this.handleDelete(item['Lead ID'])}
                   >
@@ -217,7 +217,7 @@ class App extends Component {
             name="firstName"
             value={this.state.create.firstName}
             onChange={this.handleAddInputChange}
-            
+
           />
           <input
             type="text"
@@ -234,7 +234,7 @@ class App extends Component {
             name="company"
             value={this.state.create.company}
             onChange={this.handleAddInputChange}
-            
+
           />
           <input
             type="text"
@@ -243,7 +243,7 @@ class App extends Component {
             name="email"
             value={this.state.create.email}
             onChange={this.handleAddInputChange}
-            
+
           />
           <input
             type="text"
@@ -252,7 +252,7 @@ class App extends Component {
             name="dealSize"
             value={this.state.create.dealSize}
             onChange={this.handleAddInputChange}
-            
+
           />
           <button className="btn btn-primary" onClick={this.handleAdd}>
             Add
