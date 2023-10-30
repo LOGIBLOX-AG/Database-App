@@ -187,14 +187,17 @@ class App extends Component {
                 <td>{this.renderTextOrInput(item, 'company', 'Company')}</td>
                 <td>{this.renderTextOrInput(item, 'email', 'E-Mail')}</td>
                 <td>{this.renderTextOrInput(item, 'dealSize', 'Deal Size')}</td>
-                <td class="text-end w-10 d-flex justify-content-end gap-3">
+                <td>
                   <button
                     className="btn btn-danger"
                     onClick={() => this.handleDelete(item['Lead ID'])}
                   >
                     Delete
                   </button>
+                </td>
+                <td>
                   <button
+                    type="button"
                     className="btn btn-info"
                     onClick={() =>
                       editingRowId === item['Lead ID']
@@ -205,6 +208,7 @@ class App extends Component {
                     {editingRowId === item['Lead ID'] ? 'OK' : 'Update'}
                   </button>
                 </td>
+
               </tr>
             ))}
           </tbody>
@@ -217,7 +221,7 @@ class App extends Component {
             name="firstName"
             value={this.state.create.firstName}
             onChange={this.handleAddInputChange}
-
+            style={{ marginRight: '10px' }}
           />
           <input
             type="text"
@@ -226,6 +230,7 @@ class App extends Component {
             name="lastName"
             value={this.state.create.lastName}
             onChange={this.handleAddInputChange}
+            style={{ marginRight: '10px' }}
           />
           <input
             type="text"
@@ -234,7 +239,7 @@ class App extends Component {
             name="company"
             value={this.state.create.company}
             onChange={this.handleAddInputChange}
-
+            style={{ marginRight: '10px' }}
           />
           <input
             type="text"
@@ -243,7 +248,7 @@ class App extends Component {
             name="email"
             value={this.state.create.email}
             onChange={this.handleAddInputChange}
-
+            style={{ marginRight: '10px' }}
           />
           <input
             type="text"
@@ -252,7 +257,7 @@ class App extends Component {
             name="dealSize"
             value={this.state.create.dealSize}
             onChange={this.handleAddInputChange}
-
+            style={{ marginRight: '10px' }}
           />
           <button className="btn btn-primary" onClick={this.handleAdd}>
             Add
