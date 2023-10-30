@@ -29,20 +29,21 @@ Next, set up the CRUD app by running:
 
 This should automatically open a web browser and navigate to [http://localhost:3000](http://localhost:3000) and look like this:
 
-![image](data/images/03.png)
+![image](data/assets/03.png)
 
 As you can see it is quite empty. Let's change that by
+
 1. hosting a data base on logiblox.com
 2. attaching the front-end to the automatically generated LOGIBLOX API endpoints.
-
 
 ## Setting up the LOGIBLOX Back-End API
 
 ### Create a database on LOGIBLOX
+
    To get started, the is a small datafile included in this repo in `data/table.csv`. Upload it to LOGIBLOX and specify the *Lead ID* column as index column. 
-   
-   ![image](data/images/00.png)
-   ![image](data/images/01.png)
+
+   ![image](data/assets/00.png)
+   ![image](data/assets/01.png)
 
 This column uniquely identifies each row and allows for row-specific operations such as update and delete in the database.
 
@@ -52,18 +53,20 @@ This column uniquely identifies each row and allows for row-specific operations 
 
    Alternatively click on **Share API Configurations** to generate public API keys, which can be used to access the database and operate on it. Add a key there and copy it to the clipboard.  
 
-   ![image](data/images/05.png)
-   ![image](data/images/06.png)
+   ![image](data/assets/05.png)
+   ![image](data/assets/06.png)
 
 ### Add the API key/route to the front-end
 
-   - Create a `.env.local` file in the project root. This file will be ignored by Git and is only used to set environment variables for your local development environment. Since it contains a secret API key, it should never be committed to source control.
-   - Add the following environment variables to the `.env.local` file:
-     - `REACT_APP_LOGIBLOX_API_URL` - copy this URL from the API documentation page
-     - `REACT_APP_LOGIBLOX_API_KEY` - use the previously generated API key
-   - **RESTART THE APP** 
-     - [in the terminal] CTRL+C and `npm start` again
+- Create a `.env.local` file in the project root. This file will be ignored by Git and is only used to set environment variables for your local development environment. Since it contains a secret API key, it should never be committed to source control.
+- Add the following environment variables to the `.env.local` file:
+  - `REACT_APP_LOGIBLOX_API_URL` - copy this URL from the API documentation page
+  - `REACT_APP_LOGIBLOX_API_KEY` - use the previously generated API key
+- **RESTART THE APP** 
+  - [in the terminal] CTRL+C and `npm start` again
+
 #### Example `.env.local` content:
+
    ```plaintext
    REACT_APP_LOGIBLOX_API_URL=https://your-logiblox-url.com/api/v0/datapoints/table
    
@@ -72,23 +75,23 @@ This column uniquely identifies each row and allows for row-specific operations 
 
 The browser should open again on [http://localhost:3000](http://localhost:3000) and look like this:
 
-![image](data/images/08.png)
+![image](data/assets/08.png)
 
 
 ## Usage
 
 In this small app, you can manage your data points in the LOGIBLOX database.
-Create, read, update, and delete data points. 
+Create, read, update, and delete data points.
 
 > Click the "Add" button to create a new data point.
 >
 > Click the "Update" button to modify a data point.
-> 
+>
 > Click the "Delete" button to remove a data point.
+>
 
 ## Learn More
 
 For more information about LOGIBLOX, visit [LOGIBLOX](https://logiblox.com).
 
 Happy managing your data points with LOGIBLOX CRUD API!
-
