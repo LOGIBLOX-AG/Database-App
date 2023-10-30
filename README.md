@@ -8,8 +8,8 @@ To get started with the LOGIBLOX CRUD example app, follow these steps to host th
 
    ```bash
    # clone the repo
-   git clone https://github.com/yourusername/logiblox-crud-app.git
-   
+   git clone git@github.com:filipLBX/logiblox-crud-app.git
+
    # navigate to the project directory 
    cd logiblox-crud-app
 
