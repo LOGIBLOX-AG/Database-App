@@ -1,6 +1,6 @@
 # LOGIBLOX CRUD Example App
 
-This is a simple example CRUD (Create, Read, Update, Delete) application for interacting with the LOGIBLOX Back-End API. It allows you to manage data points using a simple interface.
+This is a small example app, also called CRUD (Create, Read, Update, Delete) application, for interacting with the LOGIBLOX Back-End API. It allows you to manage data points using a simple interface.
 
 ## Getting Started
 
